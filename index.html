@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rooh ka Sukoon -Quran</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+    <link width="40px" rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+
+<body>
+    <div class="container bg-black">
+        <div class="left bg-black p-1 ">
+            <div class="colse">
+                <img width="30px" class="close invert" src="close.svg" alt="">
+            </div>
+            <div class="home bg-grey rounded m-1 p-1">
+                <div class="logo">
+                    <img width="40px" src="logo.svg" alt="spotify">
+                </div>
+                <ul>
+                    <li> <img class="invert" src="home.svg" alt="home">home</li>
+                    <li> <img class="invert" src="search.svg" alt="search">search </li>
+                </ul>
+            </div>
+            <div class="library bg-grey rounded m-1 p-1">
+                <div class="heading ">
+                    <img class="invert" src="library.svg" alt="library">
+                    <h2>your library</h2>
+                </div>
+                <div class="quranlist">
+                    <ul>
+                        <!-- <li>
+                            <img class="invert" src="music.svg" alt="">
+                            <div class="info">
+
+                                <div>
+                                    surah name
+                                </div>
+                                <div>
+                                    artist name
+                                </div>
+                            </div>
+                            <div class="playnow">
+                                <span>play now</span>
+                                <img src="playbar.svg" alt="">
+                            </div>
+                        </li>     -->
+                    </ul>
+                </div>
+
+                <div class=" leftfooter">
+                    <div><a href="https://www.spotify.com/pk-en/legal/">Legal</a></div>
+                    <div><a href="https://www.spotify.com/pk-en/safetyandprivacy/">Safety &amp; Privacy Center</a></div>
+                    <div><a href="https://www.spotify.com/pk-en/legal/privacy-policy/">Privacy Policy</a></div>
+                    <div><a href="https://www.spotify.com/pk-en/legal/cookies-policy/">Cookies</a></div>
+                    <div><a href="https://www.spotify.com/pk-en/legal/privacy-policy/#s3">About Ads</a></div>
+                    <div><a href="https://www.spotify.com/pk-en/accessibility/">Accessibility</a></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right  bg-grey rounded  p-1">
+            <div class=" header">
+
+                <div class="nav">
+                    <div class="hamburgercontainer">
+                        <img width="60px" class="hamburger invert" src="hamburger.svg" alt="">
+                        <!-- Left Arrow SVG -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M15 18L9 12L15 6" stroke="grey" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        <!-- left svg -->
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M9 18L15 12L9 6" stroke="grey" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="buttons">
+                    <button class="signupbtn">sign up</button>
+                    <button class="loginbtn">log in</button>
+                </div>
+            </div>
+
+            <div class="quranplaylist">
+                <h1>Quran Playlist</h1>
+
+
+                <div class="cardCont m-1 p-1"></div>
+                <!-- <div class="cardcontainer m-1 p-1">
+
+
+                    <div class="card m-1 p-1 rounded">
+                        <div class="play">
+
+                            <svg data-encore-id="icon" role="img" aria-hidden="true" class="e-10451-icon"
+                                filled="bg-black" viewBox="0 0 24 24"
+                                style="--encore-icon-height: var(--encore-graphic-size-decorative-base); --encore-icon-width: var(--encore-graphic-size-decorative-base);">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606">
+                                </path>
+                            </svg>
+                        </div>
+                         <img src="https://i.scdn.co/image/ab67616d00001e029ac96a5d9f1e3743966f56ca" alt="img"> -->
+                <!-- <img aria-hidden="false" draggable="false" loading="lazy"
+                            src="https://i.scdn.co/image/ab67616d00001e029ac96a5d9f1e3743966f56ca"
+                            data-testid="card-image" alt=""
+                            class="obD7rdENNc2n3fC0 whMS0fh9Ar4I_GaP WfGUvErXcmIzJo1c qIwhHcbG780QDz68">
+
+                        <h2>Wo Mera Nabi Hai</h2>
+                        <p>naat mera nabi </p>
+                    </div> -->
+                <!-- card 2 -->
+
+            </div>
+            <div class="sep m-1"></div>
+
+
+
+
+            <div class="playbar">
+
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+
+
+                <!-- <div class="quran invert"> -->
+                <div class="abovebar">
+                    <div class="surahinfo"> </div>
+
+                    <div class="surahbtn">
+                        <img id="previous" src="previous.svg" alt="">
+
+                        <img id="play" src="play.svg" alt="">
+
+
+                        <img id="next" src="next.svg" alt="">
+                    </div>
+                    <div class="timevol">
+
+                        <div class="surahtime">
+
+                        </div>
+                        <div class="volume ">
+                            <img width="45px" src="volume.svg" alt="">
+                            <div class="range">
+                                <input type="range" name="volume" id="">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- </div> -->
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+</body>
+
+</html>
