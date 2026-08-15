@@ -21,7 +21,7 @@ function secondsToMinutesSeconds(seconds) {
 async function getquran(folder) {
     currFolder = folder
 
-    let a = await fetch(`http://127.0.0.1:3000/${folder}/`)
+    let a = await fetch(`${folder}/`)
 
     let response = await a.text()
 
@@ -52,13 +52,13 @@ async function getquran(folder) {
 async function getFolders() {
     return [
         { raw: "quran", display: "Quran" },
-        { raw: "Rooh ki ghiza", display: "Rooh ki Ghiza" },
         { raw: "Ruhaniyat", display: "Ruhaniyat" },
+        { raw: "Rooh ki ghiza", display: "Rooh ki Ghiza" },
         { raw: "Sukoon", display: "Sukoon" },
         { raw: "Tilawah", display: "Tilawah" },
         { raw: "khamoshi", display: "Khamoshi" },        // <- naya
-        { raw: "kalam-e-pak", display: "Kalam-e-Pak" },  // <- naya
         { raw: "Dil ki sada", display: "Dil ki Sada" },  // <- naya
+        { raw: "kalam-e-pak", display: "Kalam-e-Pak" },  // <- naya
         { raw: "Noor-e-Quran", display: "Noor-e-Quran" } ,// <- naya
         { raw:  "jihad", display:  "jihad" } ,// <- naya
         { raw:   "ncs", display:   "ncs"} ,// <- naya
