@@ -21,32 +21,19 @@ function secondsToMinutesSeconds(seconds) {
 async function getquran(folder) {
     currFolder = folder
 
-    let a = await fetch(`${folder}/`)
-
-    let response = await a.text()
-
-    let div = document.createElement("div")
-    div.innerHTML = response
-    let as = div.getElementsByTagName("a")
-
-    // pehle 3 anchors ke href print karo, dekho kaisi dikhte hain
-    for (let i = 0; i < Math.min(3, as.length); i++) {
-    }
-
+    let apiUrl = `https://api.github.com/repos/ikhansa623-source/Rooh-ka-Sukoon--Quran/contents/${encodeURIComponent(folder)}`
+    let response = await fetch(apiUrl)
+    let files = await response.json()
     let quran = []
-    for (let index = 0; index < as.length; index++) {
-        const element = as[index];
-
-        if (element.href.includes(".mp3")) {
-
-            let decoded = decodeURIComponent(element.href)
-            let parts = decoded.split("\\").filter(Boolean)
-            let name = parts[parts.length - 1]
-            quran.push({ url: element.href, name: name })
+    for (const file of files) {
+        if (file.name.endsWith(".mp3")) {
+            quran.push({
+                url: file.download_url,   // GitHub khud direct download URL deta hai
+                name: file.name
+            })
         }
     }
     return quran
-
 }
 
 async function getFolders() {
@@ -59,10 +46,10 @@ async function getFolders() {
         { raw: "khamoshi", display: "Khamoshi" },        // <- naya
         { raw: "Dil ki sada", display: "Dil ki Sada" },  // <- naya
         { raw: "kalam-e-pak", display: "Kalam-e-Pak" },  // <- naya
-        { raw: "Noor-e-Quran", display: "Noor-e-Quran" } ,// <- naya
-        { raw:  "jihad", display:  "jihad" } ,// <- naya
-        { raw:   "ncs", display:   "ncs"} ,// <- naya
-        { raw:  "junoon-e-shahadat", display:  "junoon-e-shahadat" } // <- naya
+        { raw: "Noor-e-Quran", display: "Noor-e-Quran" },// <- naya
+        { raw: "jihad", display: "jihad" },// <- naya
+        { raw: "ncs", display: "ncs" },// <- naya
+        { raw: "junoon-e-shahadat", display: "junoon-e-shahadat" } // <- naya
     ]
 }
 // async function getFolders() {
@@ -111,13 +98,13 @@ let folderMeta = {
         artist: "yousaf"
     },
     "quran": {
-               image: "https://tse2.mm.bing.net/th/id/OIP.5d5lKgbYNLODsrQxta3rHwHaHo?r=0&pid=ImgDet&w=206&h=212&c=7&dpr=1.3&o=7&rm=3",
+        image: "https://tse2.mm.bing.net/th/id/OIP.5d5lKgbYNLODsrQxta3rHwHaHo?r=0&pid=ImgDet&w=206&h=212&c=7&dpr=1.3&o=7&rm=3",
 
         artist: "yousaf"
     },
     "jihad": {
-                image: "https://tse3.mm.bing.net/th/id/OIP.zchEbs_047W17Y7IRacA3wHaHa?r=0&pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3",
-                 artist: "yousaf"
+        image: "https://tse3.mm.bing.net/th/id/OIP.zchEbs_047W17Y7IRacA3wHaHa?r=0&pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3",
+        artist: "yousaf"
     },
     "Rooh ki ghiza": {
         image: "https://tse2.mm.bing.net/th/id/OIP.X-M5NTDMNhSQigsESSp-oQHaHa?r=0&w=736&h=736&rs=1&pid=ImgDetMain&o=7&rm=3",
@@ -137,13 +124,13 @@ let folderMeta = {
         artist: "yousaf"
     },
     "Noor-e-Quran": {
-               image: "https://tse3.mm.bing.net/th/id/OIP.VZTcwzDwXPphxeR8caGNngHaHa?r=0&pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3",
+        image: "https://tse3.mm.bing.net/th/id/OIP.VZTcwzDwXPphxeR8caGNngHaHa?r=0&pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3",
 
         artist: "yousaf"
     },
     "junoon-e-shahadat": {
-                image: "https://www.bing.com/th/id/OIP.kvDm3BSlqAHPlLNKtqmGCAHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=ImgAns&rm=2",
-                 artist: "yousaf"
+        image: "https://www.bing.com/th/id/OIP.kvDm3BSlqAHPlLNKtqmGCAHaHa?w=193&h=193&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=ImgAns&rm=2",
+        artist: "yousaf"
     }
 }
 async function displayAlbums() {
