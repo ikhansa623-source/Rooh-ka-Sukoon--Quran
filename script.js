@@ -103,7 +103,7 @@ let folderMeta = {
         artist: "yousaf"
     },
     "jihad": {
-        image: "https://tse3.mm.bing.net/th/id/OIP.zchEbs_047W17Y7IRacA3wHaHa?r=0&pid=ImgDet&w=206&h=206&c=7&dpr=1.3&o=7&rm=3",
+        image: "https://th.bing.com/th/id/OIP.qDwK7Uxkaa5rKj7Nc4i-CQHaEG?w=280&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
         artist: "yousaf"
     },
     "Rooh ki ghiza": {
