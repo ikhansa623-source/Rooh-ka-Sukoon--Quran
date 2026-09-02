@@ -173,7 +173,7 @@ const playrecitation = (rec, pause = false) => {
     currentquran.src = rec.url
     if (!pause) {
         currentquran.play();
-        play.src = "pause.svg"
+        play.src = "svg/pause.svg"
 
     }
 
@@ -210,7 +210,7 @@ async function renderquranList() {
                                 </div>
                                 <div class="playnow">
                                     <span>play now</span>
-                                    <img src="playbar.svg" alt="">
+                                    <img src="svg/playbar.svg" alt="">
                                 </div> </li>`;
 
 
@@ -242,11 +242,11 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentquran.paused) {
             currentquran.play()
-            play.src = "pause.svg"
+            play.src = "svg/pause.svg"
         } else {
             currentquran.pause()
 
-            play.src = "play.svg"
+            play.src = "svg/play.svg"
         }
     })
 
@@ -321,10 +321,10 @@ async function main() {
         let volumeico = document.querySelector(".volume img")
 
         if (e.target.value == 0) {
-            volumeico.src = "mute.svg"
+            volumeico.src = "svg/mute.svg"
         } else {
 
-            volumeico.src = "volume.svg"
+            volumeico.src = "svg/volume.svg"
         }
 
 
