@@ -144,19 +144,19 @@ body {
     padding: 16px;
 }
 
-.logo {
+.si-logo {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.logo img {
+.si-logo img {
     width: 44px;
     height: 44px;
     object-fit: contain;
 }
 
-.logo span {
+.si-logo span {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700;
     font-size: 20px;

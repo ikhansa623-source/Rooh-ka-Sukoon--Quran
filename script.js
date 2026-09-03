@@ -17,24 +17,62 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 
-
 async function getquran(folder) {
     currFolder = folder
 
-    let apiUrl = `https://api.github.com/repos/ikhansa623-source/Rooh-ka-Sukoon--Quran/contents/${encodeURIComponent(folder)}`
-    let response = await fetch(apiUrl)
-    let files = await response.json()
-    let quran = []
-    for (const file of files) {
-        if (file.name.endsWith(".mp3")) {
-            quran.push({
-                url: file.download_url,   // GitHub khud direct download URL deta hai
-                name: file.name
-            })
+    let username = "ikhansa623-source";
+    let repo = "Rooh-ka-Sukoon--Quran";
+    let branch = "main";
+
+    let apiUrl = `https://api.github.com/repos/${username}/${repo}/contents/recite/${encodeURIComponent(folder)}`
+
+    try {
+        let response = await fetch(apiUrl)
+        let files = await response.json()
+
+        if (!Array.isArray(files)) {
+            console.error("Error:", files.message);
+            return [];
         }
+
+        let quran = []
+        for (const file of files) {
+            if (file.name.endsWith(".mp3")) {
+                // download_url pe depend nahi karna, khud RAW URL banao:
+                let rawUrl = `https://raw.githubusercontent.com/${username}/${repo}/${branch}/recite/${folder}/${encodeURIComponent(file.name)}`
+
+                quran.push({
+                    url: rawUrl,
+                    name: file.name
+                })
+            }
+        }
+        return quran
+
+    } catch (error) {
+        console.error("Fetch Error:", error);
+        return [];
     }
-    return quran
 }
+// async function getquran(folder) {
+//     currFolder = folder
+
+//     let apiUrl = `https://api.github.com/repos/ikhansa623-source/Rooh-ka-Sukoon--Quran/contents/${encodeURIComponent(folder)}`
+//     let response = await fetch(apiUrl)
+//     let files = await response.json()
+//         console.log("apiUrl response:", files)   // <- ye add karo, dekho kya aata hai
+
+//     let quran = []
+//     for (const file of files) {
+//         if (file.name.endsWith(".mp3")) {
+//             quran.push({
+//                 url: file.download_url,   // GitHub khud direct download URL deta hai
+//                 name: file.name
+//             })
+//         }
+//     }
+//     return quran
+// }
 
 async function getFolders() {
     return [

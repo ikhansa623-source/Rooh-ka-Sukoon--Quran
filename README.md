@@ -25,7 +25,6 @@ Users can browse collections, pick a Surah, and control playback with a full set
 - **📱 Fully Responsive** — Works perfectly on Mobile, Tablet, and Desktop
 - **🎨 Custom UI** — Spotify-style layout built with pure CSS
 - **⚡ Lightweight** — No dependencies. Loads fast
-
 ---
 
 ## 🛠️ Built With
