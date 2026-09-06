@@ -37,7 +37,7 @@ Users can browse collections, pick a Surah, and control playback with a full set
 ---
 ## 🤝 About SI ROOTS
 - SI ROOTS builds Islamic web apps and interactive tools for the Muslim community worldwide.
-- For custom Islamic projects or collaborations: Contact on WhatsApp
+- For custom Islamic projects or collaborations: Contact on WhatsApp`923339641134`
 
 ## 🧠 Key Concepts
 
